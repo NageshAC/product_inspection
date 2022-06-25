@@ -9,10 +9,10 @@ class Parser:
     def __init__(self, input_path:str):
         if not os.path.isdir(input_path):
             # if folder doesn't exits, then throw an error
-            pass
-        else:
+            raise Exception("ERROR: This folder doesn't exits")
+        elif not os.listdir(input_path):
             # if floder is empty, then throw error
-            pass
+            raise Exception("ERROR: The folder is empty")
 
         # set folder_path
         self.input_path = input_path
@@ -114,5 +114,5 @@ class Parser:
 
 
 if __name__ == '__main__':
-    p = Parser (os.path.join(os.getcwd(),'data'))
+    p = Parser (os.path.join(os.getcwd(),'asd'))
     p.parse()
